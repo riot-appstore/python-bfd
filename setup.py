@@ -9,7 +9,7 @@ bfd = Extension('bfd',
                                  # get around automake
                                  ('PACKAGE', 1),
                                  ('PACKAGE_VERSION', 1)],
-                libraries = ['bfd-2.30-multiarch', 'opcodes-2.30-multiarch', 'z'],
+                libraries = ['bfd', 'opcodes', 'z'],
                 extra_compile_args=['-fpermissive'],
                 language="c++", # generate and compile C++ code
                 sources = ['bfd/bfd.pyx'])
@@ -25,5 +25,5 @@ setup (name = 'PythonBFD',
        setup_requires=[
            # Setuptools 18.0 properly handles Cython extensions.
            'setuptools>=18.0',
-           'Cython==0.22.1'
+           'Cython'
        ])
